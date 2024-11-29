@@ -1,5 +1,6 @@
 import { useAuth } from "@clerk/clerk-expo";
 import { Redirect } from "expo-router";
+// import "react-native-reanimated";
 
 const Home = () => {
   const { isSignedIn } = useAuth();
