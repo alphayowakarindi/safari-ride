@@ -5,6 +5,7 @@ import GoogleTextInput from "@/components/GoogleTextInput";
 import RideLayout from "@/components/RideLayout";
 import { icons } from "@/constants";
 import { useLocationStore } from "@/store";
+import { router } from "expo-router";
 
 const FindRide = () => {
   const {
@@ -43,7 +44,11 @@ const FindRide = () => {
         />
       </View>
 
-      <CustomButton title="Find Now" className="mt-5" />
+      <CustomButton
+        onPress={() => router.push(`/(root)/confirm-ride`)}
+        title="Find Now"
+        className="mt-5"
+      />
     </RideLayout>
   );
 };
