@@ -91,7 +91,7 @@ const Map = () => {
     <MapView
       provider={PROVIDER_DEFAULT}
       tintColor="black"
-      mapType="standard"
+      mapType="mutedStandard"
       showsPointsOfInterest={false}
       region={region}
       showsUserLocation={true}
