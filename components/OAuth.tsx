@@ -1,4 +1,4 @@
-import { Alert, Image, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
 import CustomButton from "@/components/CustomButton";
 import { icons } from "@/constants";
@@ -12,7 +12,7 @@ const OAuth = () => {
   const handleGoogleSignIn = async () => {
     const result = await googleOAuth(startOAuthFlow);
 
-    if (result.code === "session_exists" || result.code === 'success') {
+    if (result.code === "session_exists" || result.code === "success") {
       router.replace("/(root)/(tabs)/home");
     }
   };
