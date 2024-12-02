@@ -30,8 +30,9 @@ const InputField = ({
         >
           {icon && <Image source={icon} className={`w-6 h-6 ml-4 ${icon}`} />}
           <TextInput
-            className={`rounded-full p-4 font-JakartaSemiBold text-[15px] flex-1 ${inputStyle} text-left`}
+            className={`rounded-full p-4 font-JakartaSemiBold text-[15px] flex-1 ${inputStyle} text-left text-black`}
             secureTextEntry={secureTextEntry}
+            placeholderTextColor={"editable" in props ? "#808080" : undefined}
             {...props}
           />
         </View>
