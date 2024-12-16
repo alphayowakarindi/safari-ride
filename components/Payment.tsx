@@ -32,16 +32,21 @@ const Payment = ({
   const [success, setSuccess] = useState<boolean>(false);
 
   const openPaymentSheet = async () => {
-    await initializePaymentSheet();
+    try {
+      await initializePaymentSheet();
+      const { error } = await presentPaymentSheet();
 
-    const { error } = await presentPaymentSheet();
-
-    if (error) {
-      Alert.alert(`Error code: ${error.code}`, error.message);
-    } else {
-      setSuccess(true);
+      if (error) {
+        Alert.alert(`Error code: ${error.code}`, error.message);
+      } else {
+        setSuccess(true); // Show success modal
+      }
+    } catch (err) {
+      console.error("Error opening payment sheet:", err);
+      Alert.alert("Something went wrong. Please try again.");
     }
   };
+
 
   const initializePaymentSheet = async () => {
     const { error } = await initPaymentSheet({
